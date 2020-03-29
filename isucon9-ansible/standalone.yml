@@ -12,11 +12,9 @@
 
     - nginx
     - mysql
-    - perl
     - golang
     - webapp.mysql
     - webapp.golang
-    - webapp.perl
     - webapp.nginx
 
     # for dev
