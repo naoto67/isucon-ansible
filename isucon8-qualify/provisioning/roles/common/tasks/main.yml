@@ -31,54 +31,41 @@
     group: root
     mode: 0440
 
-- name: Install epel-release
-  become: yes
-  become_user: root
-  yum:
-    pkg: "{{ item }}"
-    state: installed
-  with_items:
-    - epel-release
+    # - name: Install epel-release
+    #   become: yes
+    #   become_user: root
+    #   yum:
+    #     pkg: "{{ item }}"
+    #     state: installed
+    #   with_items:
+    #     - epel-release
 
-- name: Install Development Tools
-  become: yes
-  become_user: root
-  yum: name="{{ item }}" state=present
-  with_items:
-    - "@Development Tools"
+    # - name: Install Development Tools
+    #   become: yes
+    #   become_user: root
+    #   apt: name="{{ item }}" state=present
+    #   with_items:
+    #     - "@Development Tools"
 
 - name: Install packages
   become: yes
   become_user: root
-  yum:
+  apt:
     pkg: "{{ item }}"
-    state: installed
+    state: present
   with_items:
     - autoconf
     - automake
     - curl
     - dstat
-    - firewalld
-    - gdbm-devel
     - git
     - jq
-    - libffi-devel
-    - libyaml-devel
-    - ncurses-devel
-    - openssl-devel
-    - patch
-    - readline-devel
     - sudo
-    - zlib-devel
-
-- name: Restart and enable firewalld
-  become: yes
-  become_user: root
-  systemd:
-    name: firewalld
-    state: restarted
-    daemon_reload: yes
-    enabled: yes
+    - ubuntu-dev-tools
+    - build-essential
+    - libcurl4-gnutls-dev
+    - libxml2-dev
+    - libssl-dev
 
 - name: Install xbuild
   become: yes

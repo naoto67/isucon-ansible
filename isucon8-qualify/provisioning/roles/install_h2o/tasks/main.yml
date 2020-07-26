@@ -16,11 +16,9 @@
 - name: Install h2o
   become: yes
   become_user: root
-  yum:
+  apt:
     pkg: "{{ item }}"
-    state: installed
+    state: present
   with_items:
     - cmake
-    - openssl-devel
-    - libuv
     - h2o

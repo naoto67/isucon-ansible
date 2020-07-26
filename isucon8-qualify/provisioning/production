@@ -4,15 +4,19 @@
 
 [bench]
 # ベンチマーカをデプロイするサーバ
+isucon1
 
 
 [webapp1]
 # 競技用webappをデプロイするサーバ(1)
+isucon1
 
 
 [webapp2]
 # 競技用webappをデプロイするサーバ(2)
+isucon2
 
 
 [webapp3]
 # 競技用webappをデプロイするサーバ(3)
+isucon3

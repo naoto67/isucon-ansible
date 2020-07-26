@@ -1,12 +1,14 @@
 all: build
+GOBIN := /home/isucon/local/go/bin/go
 
 .PHONY: clean
 clean:
 	rm -rf torb
 
 deps:
-	gb vendor restore
+	# ${GOBIN} mod init torb
+	${GOBIN} mod vendor
 
 .PHONY: build
 build:
-	GOPATH=`pwd`:`pwd`/vendor go build -v torb
+	${GOBIN} build -o torb -v ./src/torb/app.go

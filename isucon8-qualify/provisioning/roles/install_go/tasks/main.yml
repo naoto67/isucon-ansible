@@ -27,7 +27,7 @@
   become_user: isucon
   blockinfile:
     marker: "# {mark} ANSIBLE MANAGED BLOCK go"
-    dest: /home/isucon/.bash_profile
+    dest: /home/isucon/.bashrc
     content: |
       export PATH=/home/isucon/local/go/bin:/home/isucon/go/bin:$PATH
       export GOROOT=/home/isucon/local/go
