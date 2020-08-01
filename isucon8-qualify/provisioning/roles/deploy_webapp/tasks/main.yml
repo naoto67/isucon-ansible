@@ -22,6 +22,7 @@
       - "--exclude=bench"
       - "--exclude=portal"
       - "--exclude=provisioning"
+      - "--exclude=Vagrantfile"
       - "--exclude=bench/vendor/src"
       - "--exclude=webapp/*/run_local.sh"
       - "--exclude=webapp/nodejs/node_modules"
